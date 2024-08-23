@@ -14,7 +14,7 @@ const validateNumbers = (num1, num2) => {
 };
 
 app.get('/', (req, res) => {
-  res.json({ message: 'Hello world!' });
+  res.json({ message: 'Hello World' });
 });
 
 app.post('/add', (req, res) => {
@@ -26,7 +26,7 @@ app.post('/add', (req, res) => {
   if (sum > 1000000) return res.json({ status: 'error', message: 'Overflow' });
   if (sum < -1000000) return res.json({ status: 'error', message: 'Underflow' });
 
-  res.json({ status: 'success', message: 'The sum of given two numbers', sum });
+  res.json({ status: 'success', message: 'the sum of given two numbers', sum });
 });
 
 app.post('/sub', (req, res) => {
@@ -35,10 +35,10 @@ app.post('/sub', (req, res) => {
   if (error) return res.json(error);
 
   const difference = num1 - num2;
-  if (difference > 1000000) return res.json({ status: 'error', message: 'Overflow' });
-  if (difference < -1000000) return res.json({ status: 'error', message: 'Underflow' });
+  if (difference > 1000000) return res.json({ status: 'error', message: 'Underflow' });
+  if (difference < -1000000) return res.json({ status: 'error', message: 'Overflow' });
 
-  res.json({ status: 'success', message: 'The difference of given two numbers', difference });
+  res.json({ status: 'success', message: 'the difference of given two numbers', difference });
 });
 
 app.post('/multiply', (req, res) => {
