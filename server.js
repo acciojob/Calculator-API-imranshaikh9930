@@ -36,8 +36,8 @@ app.post('/sub', (req, res) => {
   if (error) return res.json(error);
 
   const difference = num1 - num2;
-  if (difference > 1000000) return res.json({ status: 'error', message: 'Underflow' });
-  if (difference < -1000000) return res.json({ status: 'error', message: 'Overflow' });
+  if (difference > 1000000) return res.json({ status: 'error', message: 'Overflow' });
+  if (difference < -1000000) return res.json({ status: 'error', message: 'Underflow' });
 
   res.json({ status: 'success', message: 'the difference of given two numbers', difference });
 });
