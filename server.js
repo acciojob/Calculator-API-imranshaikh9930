@@ -14,7 +14,8 @@ const validateNumbers = (num1, num2) => {
 };
 
 app.get('/', (req, res) => {
-  res.json({ message: 'Hello World' });
+  res.send({ message: 'Hello World' });
+  // res.send("Imran")
 });
 
 app.post('/add', (req, res) => {
@@ -35,8 +36,8 @@ app.post('/sub', (req, res) => {
   if (error) return res.json(error);
 
   const difference = num1 - num2;
-  if (difference > 1000000) return res.json({ status: 'error', message: 'Underflow' });
-  if (difference < -1000000) return res.json({ status: 'error', message: 'Overflow' });
+  if (difference > 1000000) return res.json({ status: 'error', message: 'Overflow' });
+  if (difference < -1000000) return res.json({ status: 'error', message: 'Underflow' });
 
   res.json({ status: 'success', message: 'the difference of given two numbers', difference });
 });
@@ -66,7 +67,6 @@ app.post('/divide', (req, res) => {
   res.json({ status: 'success', message: 'The division of given numbers', result });
 });
 
-app.post("/")
 app.listen(3000, () => {
   console.log('server started');
 });
